@@ -1,0 +1,1 @@
+{"version":3,"sources":["../index.js"],"names":[],"mappings":";;AACA;;;;;;AAEA,uC,CAHA","file":"index.js","sourcesContent":["// Local dependencies\nimport visualRegressionTests from './includes/visualRegressionTests';\n\nvisualRegressionTests();"]}
