@@ -43,3 +43,6 @@ After setting up the repository locally (see above) you will need to:
 
 ### [master](https://github.com/ataylorme/loopconf-2018-automated-update-workshop/tree/master)
 The `master` branch is the starting point for the workshop where we will be working with [BackstopJS](https://github.com/garris/BackstopJS).
+
+### [multiple-sites](https://github.com/ataylorme/loopconf-2018-automated-update-workshop/tree/multiple-sites)
+The `multiple-sites` branch is where we will be working on scaling, testing more than one site.
