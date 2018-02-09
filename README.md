@@ -39,6 +39,11 @@ After setting up the repository locally (see above) you will need to:
 1. Run the command `npm run start`
 1. Check out the results
 
+**Troubleshooting**
+If you are having issues with the script hanging or BackstopJS taking a long time there may be headless Chrome instances that didn't close properly. 
+
+Try `pkill -f "(chrome)?(--headless)"` on Mac/Linux or `Get-CimInstance Win32_Process -Filter "Name = 'chrome.exe' AND CommandLine LIKE '%--headless%'" | %{Stop-Process $_.ProcessId}` in Windows PowerShell.
+
 ## Branches
 
 ### [master](https://github.com/ataylorme/loopconf-2018-automated-update-workshop/tree/master)
