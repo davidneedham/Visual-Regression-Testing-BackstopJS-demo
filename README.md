@@ -22,12 +22,14 @@ Download the `master` branch of this repository - either using Git or downloadin
 
 ## Instructions
 After setting up the repository locally (see above) you will need to:
+1. Run the command `npm install` to download dependencies
 1. Run the command `npm run start`
 1. Check out the results from the sample test
     - Should open in your browser automatically
 1. Edit `includes/backstop.json`
     - Set `referenceUrl` in `scenarios` to your production site URL
     - Set `url` in `scenarios` to your non-production environment (local, staging, etc.) URL
+    - Start your local environment if needed
 1. Run the command `npm run start`
 1. Check out the results
 1. Edit `includes/backstop.json`
