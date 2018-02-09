@@ -3,48 +3,52 @@
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-exports.default = checkForUpdates;
+
+exports.default = function () {
+    var args = (0, _minimist2.default)(process.argv.slice(2), {});
+    var sitesToUpdateKeys = Object.keys(_sitesToUpdate2.default);
+    if (sitesToUpdateKeys.length === 1) {
+        (0, _visualRegressionTestSite2.default)(sitesToUpdateKeys[0]);
+    } else if (Object.prototype.hasOwnProperty.call(args, 'site')) {
+        (0, _visualRegressionTestSite2.default)(args.site);
+    } else {
+
+        var rl = _readline2.default.createInterface({
+            input: process.stdin,
+            output: process.stdout
+        });
+        console.log("\nAvailable sites:");
+
+        for (var site in _sitesToUpdate2.default) {
+            console.log(site);
+        }
+
+        rl.question('What site do you want to test? ', function (userSite) {
+            (0, _visualRegressionTestSite2.default)(userSite);
+            rl.close();
+        });
+    }
+};
 
 var _throwError = require('./throwError');
 
 var _throwError2 = _interopRequireDefault(_throwError);
 
-var _backstopjs = require('backstopjs');
+var _sitesToUpdate = require('./sitesToUpdate');
 
-var _backstopjs2 = _interopRequireDefault(_backstopjs);
+var _sitesToUpdate2 = _interopRequireDefault(_sitesToUpdate);
 
-var _opn = require('opn');
+var _visualRegressionTestSite = require('./visualRegressionTestSite');
 
-var _opn2 = _interopRequireDefault(_opn);
+var _visualRegressionTestSite2 = _interopRequireDefault(_visualRegressionTestSite);
 
-var _path = require('path');
+var _readline = require('readline');
 
-var _path2 = _interopRequireDefault(_path);
+var _readline2 = _interopRequireDefault(_readline);
+
+var _minimist = require('minimist');
+
+var _minimist2 = _interopRequireDefault(_minimist);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-// Local dependencies
-function checkForUpdates() {
-
-    var rootDir = _path2.default.dirname(require.main.filename);
-    if (rootDir.endsWith('dist')) {
-        rootDir = rootDir.substring(0, rootDir.indexOf('/dist'));
-    }
-
-    (0, _backstopjs2.default)('reference', { config: 'includes/backstop.json' }).then(function () {
-        console.log('Backstop JS reference complete! Starting tests.');
-
-        (0, _backstopjs2.default)('test', { config: 'includes/backstop.json' }).then(function () {
-            console.log('Backstop JS tests passed!');
-        }).catch(function () {
-            console.log('Opening: "' + rootDir + '/backstop_data/html_report/index.html"');
-            (0, _opn2.default)(rootDir + '/backstop_data/html_report/index.html');
-            (0, _throwError2.default)('Backstop JS tests failed!');
-        });
-    }).catch(function () {
-        (0, _throwError2.default)('Backstop JS reference failed!');
-    });
-}
-
-// Contrib dependencies
 //# sourceMappingURL=visualRegressionTests.js.map

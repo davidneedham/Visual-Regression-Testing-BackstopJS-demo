@@ -1,31 +1,36 @@
 // Local dependencies
 import throwError from './throwError';
+import sitesToUpdate from './sitesToUpdate';
+import visualRegressionTestSite from './visualRegressionTestSite';
 
-// Contrib dependencies
-import backstop from 'backstopjs';
-import opn from 'opn';
-import path from 'path';
+// External dependencies
+import readline from 'readline';
+import minimist from 'minimist'
 
+export default function () {
+    const args = minimist(process.argv.slice(2), {});
+    const sitesToUpdateKeys = Object.keys(sitesToUpdate)
+    if (sitesToUpdateKeys.length === 1) {
+        visualRegressionTestSite(sitesToUpdateKeys[0])
+    } else if (Object.prototype.hasOwnProperty.call(args, 'site')) {
+        visualRegressionTestSite(args.site)
+    } else {
 
-export default function checkForUpdates() {
-
-    let rootDir = path.dirname(require.main.filename)
-    if( rootDir.endsWith('dist') ){
-        rootDir = rootDir.substring( 0, rootDir.indexOf( '/dist' ) )
-    }
-
-    backstop('reference', {config:'includes/backstop.json'}).then(() => {
-        console.log('Backstop JS reference complete! Starting tests.')
-
-        backstop('test', {config:'includes/backstop.json'}).then(() => {
-            console.log('Backstop JS tests passed!')
-        }).catch(() => {
-            console.log(`Opening: "${rootDir}/backstop_data/html_report/index.html"`)
-            opn(`${rootDir}/backstop_data/html_report/index.html`)
-            throwError('Backstop JS tests failed!')
+        const rl = readline.createInterface({
+            input: process.stdin,
+            output: process.stdout
         });
-    }).catch(() => {
-        throwError('Backstop JS reference failed!')
-    });
+        console.log("\nAvailable sites:")
+
+        for (const site in sitesToUpdate) {
+            console.log(site)
+        }
+
+        rl.question('What site do you want to test? ', (userSite) => {
+            visualRegressionTestSite(userSite)
+            rl.close();
+        });
+
+    }
 
 }

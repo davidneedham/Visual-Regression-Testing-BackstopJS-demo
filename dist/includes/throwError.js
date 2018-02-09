@@ -6,6 +6,6 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = throwError;
 function throwError(message) {
     console.error(message);
-    process.exit(1);
+    process.exit(0);
 }
 //# sourceMappingURL=throwError.js.map

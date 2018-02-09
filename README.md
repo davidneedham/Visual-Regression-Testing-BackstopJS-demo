@@ -22,22 +22,29 @@ Download the `master` branch of this repository - either using Git or downloadin
 
 ## Instructions
 After setting up the repository locally (see above) you will need to:
+1. Run the command `npm install` to download dependencies
 1. Run the command `npm run start`
+    - Type a site name from the list
 1. Check out the results from the sample test
     - Should open in your browser automatically
-1. Edit `includes/backstop.json`
-    - Set `referenceUrl` in `scenarios` to your production site URL
-    - Set `url` in `scenarios` to your non-production environment (local, staging, etc.) URL
-1. Run the command `npm run start`
-1. Check out the results
-1. Edit `includes/backstop.json`
-    - Try changing `viewports` or adding more `scenarios`
-1. Run the command `npm run start`
-1. Check out the results
-1. Update WordPress on your non-production environment (local, staging, etc.)
-    - Use the WordPress admin or wp-cli
-1. Run the command `npm run start`
-1. Check out the results
+1. Run the command `npm run start -- --all`
+    - note the extra `--`
+1. Check out the results from multiple sites
+    - Should open in your browser automatically
+1. Edit `includes/sitesToUpdate.js`
+    - This is where the list of sites to test is stored
+    - Try changing to one (or more) of your sites
+    - `BackstopReferenceBaseUrl` is your non-production environment (local, staging, etc.) URL
+    - `BackstopTestUrl` is your production site URL
+    - Adjust `pathsToTest`, which is the array of URIs to test for each site
+    - Start your local environment if needed
+1. Run the command `npm run start` to test a single site or `npm run start -- --all` to test all sites in `includes/sitesToUpdate.js`
+1. Profit
+
+**Troubleshooting**
+If you are having issues with the script hanging or BackstopJS taking a long time there may be headless Chrome instances that didn't close properly. 
+
+Try `pkill -f "(chrome)?(--headless)"` on Mac/Linux or `Get-CimInstance Win32_Process -Filter "Name = 'chrome.exe' AND CommandLine LIKE '%--headless%'" | %{Stop-Process $_.ProcessId}` in Windows PowerShell.
 
 ## Branches
 
