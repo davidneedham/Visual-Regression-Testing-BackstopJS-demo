@@ -18,7 +18,14 @@ You will need:
     - (Optional) you can use whatever language(s) you are comfortable with but will have to convert the scripts
 
 ### Getting The Code
-Download the `master` branch of this repository - either using Git or downloading the [`.zip` file](https://github.com/ataylorme/loopconf-2018-automated-update-workshop/archive/master.zip). If using Git be sure to clone with the `--recursive` argument in order to download submodules.
+For the `master` branch  either clone this repository using Git or download the [`.zip` file](https://github.com/ataylorme/loopconf-2018-automated-update-workshop/archive/master.zip).
+
+For the `multiple-sites` branch run `git checkout multiple-sites` in your local clone directory or download the [`.zip` file](https://github.com/ataylorme/loopconf-2018-automated-update-workshop/archive/multiple-sites.zip).
+
+### Two Parts
+This example has two parts. You should start with the first part found in the [master](https://github.com/ataylorme/loopconf-2018-automated-update-workshop/tree/master) branch.
+
+After completing the steps on the master branch you can do the second part found in the [multiple-sites](https://github.com/ataylorme/loopconf-2018-automated-update-workshop/tree/multiple-sites) branch.
 
 ## Instructions
 After setting up the repository locally (see above) you will need to:
