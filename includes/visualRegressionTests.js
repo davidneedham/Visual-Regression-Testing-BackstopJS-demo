@@ -19,6 +19,7 @@ export default function checkForUpdates() {
 
         backstop('test', {config:'includes/backstop.json'}).then(() => {
             console.log('Backstop JS tests passed!')
+            console.log(`View the full report at "${rootDir}/backstop_data/html_report/index.html"`)
         }).catch(() => {
             console.log(`Opening: "${rootDir}/backstop_data/html_report/index.html"`)
             opn(`${rootDir}/backstop_data/html_report/index.html`)
