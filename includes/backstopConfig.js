@@ -45,7 +45,7 @@ export default function backstopConfig(BackstopReferenceBaseUrl, BackstopTestUrl
             'casper_scripts': `${backstopDataDir}/casper_scripts`,
             'engine_scripts': `${backstopDataDir}/engine_scripts`
         },
-        'engine': 'phantomjs',
+        'engine': 'chrome',
         'report': ['browser', 'CI'],
         'casperFlags': [],
         'debug': false,
