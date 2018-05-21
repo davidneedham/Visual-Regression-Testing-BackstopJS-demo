@@ -32,13 +32,13 @@ exports.default = function (siteToTest) {
             config: currentConfig
         }).then(function () {
 
-            console.log('Opening: "' + rootDir + '/backstop_data/' + site.name + '/html_report/index.html"');
-            (0, _opn2.default)(rootDir + '/backstop_data/' + site.name + '/html_report/index.html');
+            console.log('Report saved to "' + rootDir + '/backstop_data/' + site.name + '/html_report/index.html"');
+            // opn(`${rootDir}/backstop_data/${site.name}/html_report/index.html`)
             (0, _throwError2.default)('Backstop JS tests passed for ' + site.label + '!');
         }).catch(function () {
 
-            console.log('Opening: "' + rootDir + '/backstop_data/' + site.name + '/html_report/index.html"');
-            (0, _opn2.default)(rootDir + '/backstop_data/' + site.name + '/html_report/index.html');
+            console.log('Report saved to "' + rootDir + '/backstop_data/' + site.name + '/html_report/index.html"');
+            // opn(`${rootDir}/backstop_data/${site.name}/html_report/index.html`)
             (0, _throwError2.default)('Backstop JS tests failed for ' + site.label + '!');
         });
     }).catch(function () {

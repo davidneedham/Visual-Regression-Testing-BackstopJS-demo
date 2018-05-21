@@ -36,14 +36,14 @@ export default  function (siteToTest) {
             config: currentConfig
         }).then(() => {
 
-            console.log(`Opening: "${rootDir}/backstop_data/${site.name}/html_report/index.html"`)
-            opn(`${rootDir}/backstop_data/${site.name}/html_report/index.html`)
+            console.log(`Report saved to "${rootDir}/backstop_data/${site.name}/html_report/index.html"`)
+            // opn(`${rootDir}/backstop_data/${site.name}/html_report/index.html`)
             throwError(`Backstop JS tests passed for ${site.label}!`)
 
         }).catch(() => {
 
-            console.log(`Opening: "${rootDir}/backstop_data/${site.name}/html_report/index.html"`)
-            opn(`${rootDir}/backstop_data/${site.name}/html_report/index.html`)
+            console.log(`Report saved to "${rootDir}/backstop_data/${site.name}/html_report/index.html"`)
+            // opn(`${rootDir}/backstop_data/${site.name}/html_report/index.html`)
             throwError(`Backstop JS tests failed for ${site.label}!`)
 
         });
