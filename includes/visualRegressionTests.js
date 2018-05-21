@@ -21,8 +21,8 @@ export default function checkForUpdates() {
             console.log('Backstop JS tests passed!')
             console.log(`View the full report at "${rootDir}/backstop_data/html_report/index.html"`)
         }).catch(() => {
-            console.log(`Opening: "${rootDir}/backstop_data/html_report/index.html"`)
-            opn(`${rootDir}/backstop_data/html_report/index.html`)
+            console.log(`Report saved to "${rootDir}/backstop_data/html_report/index.html"`)
+            // opn(`${rootDir}/backstop_data/html_report/index.html`)
             throwError('Backstop JS tests failed!')
         });
     }).catch(() => {

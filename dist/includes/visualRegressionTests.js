@@ -38,8 +38,8 @@ function checkForUpdates() {
             console.log('Backstop JS tests passed!');
             console.log('View the full report at "' + rootDir + '/backstop_data/html_report/index.html"');
         }).catch(function () {
-            console.log('Opening: "' + rootDir + '/backstop_data/html_report/index.html"');
-            (0, _opn2.default)(rootDir + '/backstop_data/html_report/index.html');
+            console.log('Report saved to "' + rootDir + '/backstop_data/html_report/index.html"');
+            // opn(`${rootDir}/backstop_data/html_report/index.html`)
             (0, _throwError2.default)('Backstop JS tests failed!');
         });
     }).catch(function () {
