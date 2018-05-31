@@ -1,12 +1,12 @@
-# Workshop: Automating WordPress Updates Example Repo
-This repository is an example for the LoopConf 3.0 Automating WordPress Updates workshop (2/21/2018).  
+# Workshop: Visual Regression Testing with BackstopJS Example Repo
+  
 
 ## Workshop Description
-Your WordPress site really loves to be updated! Be it core, plugins, or themes there is a LOT of code that you need to update for every site. However, even with tools like wp-cli, updating your site is hard work.
+How do you tell if a change you made to your website has unintended side effects? Security updates should rarely result in anything changing visually, but how can you be sure?
 
-You need to apply updates, test updates, and deploy updates. And do it for every single site for which you are responsible every single time an update comes out.
+Visual regression testing automates the comparison process by taking screenshots of two URLs and comparing them. You can view a report that highlights the differences and use the pass/fail result to make decisions.
 
-Enter "Automatic WordPress Updates" and making the robots do updates for you. This workshop will involve using a Continuous Integration and Visual Regression solution to automate WordPress updates both with confidence and at scale.
+In this workshop, we will use the BackstopJS visual regression tool locally, via Node JS, to automate visual QA. We will also learn how to scale and automate these tests across multiple sites and URLs.
 
 ## Prerequisites
 You will need:
@@ -18,14 +18,14 @@ You will need:
     - (Optional) you can use whatever language(s) you are comfortable with but will have to convert the scripts
 
 ### Getting The Code
-For the `master` branch  either clone this repository using Git or download the [`.zip` file](https://github.com/ataylorme/loopconf-2018-automated-update-workshop/archive/master.zip).
+For the `master` branch  either clone this repository using Git or download the [`.zip` file](https://github.com/davidneedham/Visual-Regression-Testing-BackstopJS-demo/archive/master.zip).
 
-For the `multiple-sites` branch run `git checkout multiple-sites` in your local clone directory or download the [`.zip` file](https://github.com/ataylorme/loopconf-2018-automated-update-workshop/archive/multiple-sites.zip).
+For the `multiple-sites` branch run `git checkout multiple-sites` in your local clone directory or download the [`.zip` file](https://github.com/davidneedham/Visual-Regression-Testing-BackstopJS-demo/archive/multiple-sites.zip).
 
 ### Two Parts
-This example has two parts. You should start with the first part found in the [master](https://github.com/ataylorme/loopconf-2018-automated-update-workshop/tree/master) branch.
+This example has two parts. You should start with the first part found in the [master](https://github.com/davidneedham/Visual-Regression-Testing-BackstopJS-demo/tree/master) branch.
 
-After completing the steps on the master branch you can do the second part found in the [multiple-sites](https://github.com/ataylorme/loopconf-2018-automated-update-workshop/tree/multiple-sites) branch.
+After completing the steps on the master branch you can do the second part found in the [multiple-sites](https://github.com/davidneedham/Visual-Regression-Testing-BackstopJS-demo/tree/multiple-sites) branch.
 
 ## Instructions
 After setting up the repository locally (see above) you will need to:
@@ -55,8 +55,8 @@ Try `pkill -f "(chrome)?(--headless)"` on Mac/Linux or `Get-CimInstance Win32_Pr
 
 ## Branches
 
-### [master](https://github.com/ataylorme/loopconf-2018-automated-update-workshop/tree/master)
+### [master](https://github.com/davidneedham/Visual-Regression-Testing-BackstopJS-demo/tree/master)
 The `master` branch is the starting point for the workshop where we will be working with [BackstopJS](https://github.com/garris/BackstopJS).
 
-### [multiple-sites](https://github.com/ataylorme/loopconf-2018-automated-update-workshop/tree/multiple-sites)
+### [multiple-sites](https://github.com/davidneedham/Visual-Regression-Testing-BackstopJS-demo/tree/multiple-sites)
 The `multiple-sites` branch is where we will be working on scaling, testing more than one site.
