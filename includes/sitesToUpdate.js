@@ -1,6 +1,6 @@
 const sitesToUpdate = {
-    'wp-new-relic-demo': {
-        label: 'WP New Relic Demo',
+    'new-relic-demo': {
+        label: 'New Relic Demo',
         BackstopReferenceBaseUrl: 'https://update-wp-wp-new-relic-demo.pantheonsite.io',
         BackstopTestUrl: 'https://live-wp-new-relic-demo.pantheonsite.io',
         pathsToTest: [
@@ -16,8 +16,8 @@ const sitesToUpdate = {
             */
         ]
     },
-    'wp-quicksilver-demo': {
-        label: 'WP Quicksilver Demo',
+    'quicksilver-demo': {
+        label: 'Quicksilver Demo',
         BackstopReferenceBaseUrl: 'https://update-wp-wp-quicksilver-demo.pantheonsite.io',
         BackstopTestUrl: 'https://live-wp-quicksilver-demo.pantheonsite.io',
         pathsToTest: [
@@ -32,7 +32,22 @@ const sitesToUpdate = {
             "/development-and-workflow",
             */
         ]
-    }
+    },
+    'bicycle-demo': {
+        label: 'Bicycle Demo',
+        BackstopReferenceBaseUrl: 'http://changed-bicycles.pantheonsite.io/',
+        BackstopTestUrl: 'http://live-bicycles.pantheonsite.io',
+        pathsToTest: [
+            "/bicycles",
+            /*
+            "/build-a-bike",
+            "/shop",
+            "/blogs",
+            "/rent-a-mission-bicycle",
+            "/platform",
+            */
+        ]
+    },
 };
 
 export default sitesToUpdate;
