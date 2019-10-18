@@ -1,5 +1,6 @@
 # Workshop: Visual Regression Testing with BackstopJS Example Repo
-  
+
+# This repo has been deprecated in favor of https://github.com/davidneedham/visual-regression-testing-workshop.
 
 ## Workshop Description
 How do you tell if a change you made to your website has unintended side effects? Security updates should rarely result in anything changing visually, but how can you be sure?
